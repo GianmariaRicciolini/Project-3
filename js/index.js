@@ -78,7 +78,7 @@ console.log(me);
 const dice = () => Math.ceil(Math.random() * 6);
 const diceResult = dice();
 
-console.log(diceResult);
+console.log("Tiro un dado ed esce:", diceResult);
 
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
@@ -89,13 +89,13 @@ const whoIsBigger = () => {
   if (random > diceResult) {
     return random;
   } else if (random === diceResult) {
-    return "PAREGGIO!";
+    return "UN PAREGGIO!";
   } else {
     return diceResult;
   }
 };
 
-console.log(whoIsBigger());
+console.log("Il numero più alto è:", whoIsBigger());
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
@@ -157,8 +157,8 @@ const isThisAnEmail = (string) => {
   return false;
 };
 
-console.log(isThisAnEmail(validEmail));
-console.log(isThisAnEmail(newString)); //verifico che funzioni
+console.log("l'email è", isThisAnEmail(validEmail));
+console.log("l'email è", isThisAnEmail(newString)); //verifico che funzioni
 
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
@@ -171,7 +171,7 @@ const whatDayIsIt = () => {
   return daysOfWeek[today];
 };
 
-console.log(whatDayIsIt());
+console.log("Oggi è", whatDayIsIt());
 
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
@@ -203,7 +203,7 @@ const rollTheDices = (numberOfRolls) => {
   };
 };
 
-console.log(rollTheDices(7));
+console.log("tiro i dadi!", rollTheDices(7));
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
@@ -227,16 +227,12 @@ const isTodayMyBirthday = () => {
   const birthDay = new Date("1994-03-11");
   const today = new Date();
 
-  return (
-    birthDay.getDate() === today.getDate() &&
-    birthDay.getMonth() === today.getMonth() &&
-    birthDay.getFullYear() === today.getFullYear()
-  );
+  return birthDay.getDate() === today.getDate() && birthDay.getMonth() === today.getMonth();
   // Devo confrontare tutti i componenti separatamente in quanto gli oggetti Date sono complessi.
   // Se usassimo ad esempio "if (today === birthDay")" l'operatore di uguaglianza verificherebbe solo l'uguaglianza degli oggetti e non della stessa data.
 };
 
-console.log(isTodayMyBirthday());
+console.log("Oggi è il mio compleanno", isTodayMyBirthday());
 
 // Arrays & Oggetti
 
@@ -392,7 +388,7 @@ const newestMovie = (moviesArray) => {
 
 const newestMovieResult = newestMovie(movies);
 
-console.log("The newest movie is:", newestMovieResult.Title, "released in", newestMovieResult.Year);
+console.log("Il film più recente è:", newestMovieResult.Title, "rilasciato nel:", newestMovieResult.Year);
 
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
@@ -404,7 +400,7 @@ const countMovies = (moviesArray) => {
 
 const numberOfMovies = countMovies(movies);
 
-console.log("Number of movies:", numberOfMovies);
+console.log("I film sono:", numberOfMovies);
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
@@ -418,7 +414,7 @@ const onlyTheYears = (moviesArray) => {
 
 const yearsOfMovies = onlyTheYears(movies);
 
-console.log("Years of movies:", yearsOfMovies);
+console.log("I film sono usciti nel:", yearsOfMovies);
 
 /* ESERCIZIO 15
   Scrivi una funzione chiamata "onlyInLastMillennium" che ritorna solamente i film prodotto nel millennio scorso contenuti nell'array "movies" fornito.
@@ -436,7 +432,7 @@ const onlyInLastMillennium = () => {
   return moviesMillennium;
 };
 
-console.log("Movies from the new Millennium:", onlyInLastMillennium());
+console.log("I film del nuovo millennio sono:", onlyInLastMillennium());
 
 /* ESERCIZIO 16
   Scrivi una funzione chiamata "sumAllTheYears" che ritorna la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array "movies" fornito.
@@ -452,7 +448,7 @@ const sumAllTheYears = () => {
   return totalYears;
 };
 
-console.log("Sum of all the years:", sumAllTheYears());
+console.log("La somma di tutti gli anni insieme è:", sumAllTheYears());
 
 /* ESERCIZIO 17
   Scrivi una funzione chiamata "searchByTitle" che riceve una stringa come parametro e ritorna i film nell'array "movies" fornito che la contengono nel titolo.
@@ -472,7 +468,7 @@ const searchByTitle = (title) => {
 };
 
 const searchTerm = "Ring";
-console.log(`Movies with "${searchTerm}" in the title:`, searchByTitle(searchTerm));
+console.log(`I film con "${searchTerm}" nel titolo:`, searchByTitle(searchTerm));
 
 /* ESERCIZIO 18
   Scrivi una funzione chiamata "searchAndDivide" che riceve una stringa come parametro e ritorna un oggetto contenente due array: "match" e "unmatch".
@@ -496,10 +492,11 @@ const searchAndDivide = (title) => {
   return result;
 };
 
-const searchResult = searchAndDivide(searchTerm);
+const secondsearchTerm = "Avengers";
+const searchResult = searchAndDivide(secondsearchTerm);
 
-console.log(`Movies with "${searchTerm}" in the title:`, searchResult.match);
-console.log(`Movies without "${searchTerm}" in the title:`, searchResult.unmatch);
+console.log(`I film con "${secondsearchTerm}" nel titolo:`, searchResult.match);
+console.log(`I film senza "${secondsearchTerm}" nel titolo:`, searchResult.unmatch);
 
 /* ESERCIZIO 19
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
@@ -522,7 +519,7 @@ const removeIndex = (index) => {
 const indexToRemove = 10;
 const moviesWithoutIndex = removeIndex(indexToRemove);
 
-console.log("Movies without the specified index:", moviesWithoutIndex);
+console.log("Film rimasti:", moviesWithoutIndex);
 
 // DOM (nota: gli elementi che selezionerai non si trovano realmente nella pagina)
 
