@@ -4,10 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <!-- nonostante sia più ordinato creare un file CSS per gli stili, 
+  mi sembrava più pratico scrivere direttamente qui nell'HTML per testare la classe. -->
+    <style>
+      .test {
+        color: aqua;
+        background-color: black;
+      }
+    </style>
   </head>
   <body>
     <!-- creo una lista non ordinata con un id myList in modo che non esca più errore in console a causa degli esercizi del DOM -->
-    <ul id="myList"></ul>
+    <ul id="myList">
+      <li>testo</li>
+      <li>testo</li>
+      <li>testo</li>
+      <li>testo</li>
+      <li>testo</li>
+    </ul>
+    <!-- creo anche la tabella come test -->
+    <table>
+      <thead>
+        <tr>
+          <th><a href="#">prova</a></th>
+          <th><a href="#">per i</a></th>
+          <th><a href="#">link</a></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Prova per</td>
+          <td>la classe</td>
+          <td>test</td>
+        </tr>
+      </tbody>
+    </table>
     <script src="./js/index.js"></script>
   </body>
 </html>
